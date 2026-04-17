@@ -85,13 +85,13 @@ func RenderUserMessage(userMessage LocalStoreMessage, width int, colors SchemeCo
 	)
 	msg := userMessage.Content
 	if isVisualMode {
-		msg = "\n💁 " + msg
+		msg = "\n[User] " + msg
 		userMsg, _ := renderer.Render(msg)
 		output := strings.TrimSpace(userMsg)
 		return lipgloss.NewStyle().Render("\n" + output + "\n")
 	}
 
-	msg = "\n💁 **[Prooompter]**\n" + msg + "\n"
+	msg = "\n**[User]**\n" + msg + "\n"
 	if len(userMessage.Attachments) != 0 {
 		attachments := "\n *Attachments:* \n"
 		for _, file := range userMessage.Attachments {

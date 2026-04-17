@@ -32,12 +32,12 @@ text_title_error() {
  
 NAME="nekot"
 VERSION="latest"
-GITHUB_REPO="BalanceBalls/nekot"
+GITHUB_REPO="shawnmittal/nekot"
 DOWNLOAD_BASE_URL="https://github.com/$GITHUB_REPO/releases/download/$VERSION"
 LATEST_RELEASE_URL="https://github.com/$GITHUB_REPO/releases/latest"
 
 TAG=$(curl -L -v $LATEST_RELEASE_URL 2>&1 | \
-	grep 'GET /BalanceBalls/nekot/releases/tag' 2>&1 | \
+	grep 'GET /shawnmittal/nekot/releases/tag' 2>&1 | \
 	awk -F'v' '{print $2}' | cut -d' ' -f1) 
 
 if [ "$VERSION" == "latest" ]; then

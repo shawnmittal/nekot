@@ -572,7 +572,6 @@ func (s TextSelector) charSelectionRange(lineLength int) (int, int) {
 
 func filterLine(line string) string {
 	line = strings.ReplaceAll(line, "🤖", "")
-	line = strings.ReplaceAll(line, "💁", "")
 	return line
 }
 

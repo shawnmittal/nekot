@@ -37,14 +37,14 @@ release:
 homebrew_casks:
   - name: nekot 
     repository:
-      owner: BalanceBalls
-      name: homebrew-BalanceBalls
-    homepage: https://github.com/BalanceBalls/nekot
+      owner: shawnmittal
+      name: homebrew-shawnmittal
+    homepage: https://github.com/shawnmittal/nekot
     directory: Casks
     conflicts:
       - formula: nekot
     commit_author:
-      name: BalanceBalls
+      name: shawnmittal
     hooks:
       post:
         install: |

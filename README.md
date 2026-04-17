@@ -36,7 +36,7 @@ A tool for those who appreciate keyboard driven apps and terminal workflows (*mo
 ### Homebrew (MacOS, Linux)
 
 ```bash
-brew tap BalanceBalls/BalanceBalls
+brew tap shawnmittal/shawnmittal
 brew install nekot --cask
 ```
 
@@ -55,7 +55,7 @@ Requires `curl` and `tar`.
 **Basic install:**
 * Requires `sudo`, and installs to `/usr/local/bin/`
 ```bash
-curl -fsSL https://raw.githubusercontent.com/BalanceBalls/nekot/main/install.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/shawnmittal/nekot/main/install.sh | sudo sh
 ```
 
 **Install to path:**
@@ -63,12 +63,12 @@ curl -fsSL https://raw.githubusercontent.com/BalanceBalls/nekot/main/install.sh 
 * Make sure the specified directory is in the `$PATH`.
 * May require `sudo` depending on the path specified.
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/BalanceBalls/nekot/main/install.sh)" -- -p ~/.local/bin
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/shawnmittal/nekot/main/install.sh)" -- -p ~/.local/bin
 ```
 
 ### Download binary/executable (Windows, MacOS, Linux)
 
-1. [Go to latest release](https://github.com/BalanceBalls/nekot/releases/latest)
+1. [Go to latest release](https://github.com/shawnmittal/nekot/releases/latest)
 2. Download and extract the archive
 3. Place the binary/executable in some directory
 4. Add that directory to `$PATH`
