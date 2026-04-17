@@ -33,24 +33,3 @@ changelog:
 release:
   prerelease: auto
   draft: false
-
-homebrew_casks:
-  - name: nekot 
-    repository:
-      owner: shawnmittal
-      name: homebrew-shawnmittal
-    homepage: https://github.com/shawnmittal/nekot
-    directory: Casks
-    conflicts:
-      - formula: nekot
-    commit_author:
-      name: shawnmittal
-    hooks:
-      post:
-        install: |
-          if OS.mac?
-            if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-              system_command "/usr/bin/xattr", args: ["-d", "com.apple.quarantine", "#{staged_path}/nekot"]
-            end
-          end
-    skip_upload: auto
