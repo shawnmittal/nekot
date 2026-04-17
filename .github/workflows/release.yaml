@@ -41,7 +41,7 @@ jobs:
       - name: setup release environment
         run: |
           echo "HOMEBREW_APP_NAME=${HOMEBREW_APP_NAME}" > .release-env
-          echo "GITHUB_TOKEN=${{ secrets.PUBLISHER_TOKEN }}" >> .release-env
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .release-env
         env:
           HOMEBREW_APP_NAME: ${{ env.HOMEBREW_APP_NAME }}
 
@@ -55,7 +55,7 @@ jobs:
           version: '~> v2'
           args: release --clean --config=.goreleaser.yaml
         env:
-          GITHUB_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   release-windows:
     permissions:
@@ -77,7 +77,7 @@ jobs:
       - name: setup release environment
         run: |
           echo "CHOCO_API_KEY=${{ secrets.CHOCO_API_KEY }}" >> .release-env
-          echo "GITHUB_TOKEN=${{ secrets.PUBLISHER_TOKEN }}" >> .release-env
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .release-env
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -89,7 +89,7 @@ jobs:
           version: '~> v2'
           args: release --clean --config=.goreleaser-windows.yaml
         env:
-          GITHUB_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
   release-candidate:
@@ -111,7 +111,7 @@ jobs:
 
       - name: setup release environment
         run: |
-          echo "GITHUB_TOKEN=${{ secrets.PUBLISHER_TOKEN }}" >> .release-env
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .release-env
         env:
           HOMEBREW_APP_NAME: ${{ env.HOMEBREW_APP_NAME }}
 
@@ -125,4 +125,4 @@ jobs:
           version: '~> v2'
           args: release --clean --config=.goreleaser-rc.yaml
         env:
-          GITHUB_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
